@@ -27,4 +27,15 @@ export const schema = buildSchema(`
         isSleepMedication: Boolean!
         user: [User!]!
     }
+
+    type User {
+        id: ID!
+        email: String!
+        password: String!
+    }
+
+    input User {
+        email: String!
+        password: String!
+    }
 `);
