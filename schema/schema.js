@@ -5,9 +5,26 @@ const require = createRequire(import.meta.url);
 const { buildSchema } = require('graphql');
 
 export const schema = buildSchema(`
-    type Query {
-        sleepLog: {
-            
-        }
+    type SleepLog {
+        id: ID!
+        bedTime: String!
+        sleepTime: String!
+        hoursSlept: Float!
+        wakeUpTime: String!
+        isSpicyFood: Boolean!
+        isAlchohol: Boolean!
+        isSleepMedication: Boolean!
+        user: [User!]!
+    }
+
+    input SleepLogInput {
+        bedTime: String!
+        sleepTime: String!
+        hoursSlept: Float!
+        wakeUpTime: String!
+        isSpicyFood: Boolean!
+        isAlchohol: Boolean!
+        isSleepMedication: Boolean!
+        user: [User!]!
     }
 `);
