@@ -16,7 +16,18 @@ export const schema = buildSchema(`
         drank_alcohol: Boolean!
         used_sleep_meds: Boolean!
         notes: String
-        user: User
+        user_id: users
+    }
+
+    type users {
+        id: ID!
+        email: String!
+    }
+
+    type Query {
+        hello: String
+        users:  String
+        userEmailById(id: Int): String
     }
 
 `);
