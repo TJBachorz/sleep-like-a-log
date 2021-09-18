@@ -7,35 +7,33 @@ const { buildSchema } = require('graphql');
 export const schema = buildSchema(`
     type SleepLog {
         id: ID!
-        bedTime: String!
-        sleepTime: String!
-        hoursSlept: Float!
-        wakeUpTime: String!
-        isSpicyFood: Boolean!
-        isAlchohol: Boolean!
-        isSleepMedication: Boolean!
-        user: [User!]!
+        date: String!
+        bedtime: String!
+        approximate_sleep_time: String!
+        hours_slept: Float!
+        wake_up_time: String!
+        ate_spicy: Boolean!
+        drank_alcohol: Boolean!
+        used_sleep_meds: Boolean!
+        notes: String
+        user: User
     }
 
-    input SleepLogInput {
-        bedTime: String!
-        sleepTime: String!
-        hoursSlept: Float!
-        wakeUpTime: String!
-        isSpicyFood: Boolean!
-        isAlchohol: Boolean!
-        isSleepMedication: Boolean!
-        user: [User!]!
-    }
-
-    type User {
-        id: ID!
-        email: String!
-        password: String!
-    }
-
-    input User {
-        email: String!
-        password: String!
-    }
 `);
+    
+    // input SleepLogInput {
+    //     bedtime: String!
+    //     approximate_sleep_time: String!
+    //     hours_slept: Float!
+    //     wake_up_time: String!
+    //     ate_spicy: Boolean!
+    //     drank_alcohol: Boolean!
+    //     used_sleep_meds: Boolean!
+    //     notes: String
+    //     user: User
+    // }
+
+    // input User {
+    //     email: String!
+    //     password: String!
+    // }
